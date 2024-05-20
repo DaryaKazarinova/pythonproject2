@@ -2,12 +2,12 @@
 
 {% block page-title %}
 {% if success %}
-<h2>Вы зарегистрированы! </br>
-</h2>
+<h4>Вы зарегистрированы! </br>
+</h4>
 <p>Уважаемый пользователь <span class="fst-italic">{{ user }}</span>, Ваша регистрация <span class="fw-bold">прошла успешно</span></p>
 {% else %}
-<h2>Ошибка регистрации  </br>  </h2>
-<p>Уважаемый пользователь <span class="fst-italic">{{ user }}</span>, Ваша регистрация <span class="fw-bold">завершилась ошибкой</span></p>
+<h4>Ошибка регистрации  </br>  </h4>
+<p>Уважаемый пользователь <span class="fst-italic">{{ user }}</span>, Ваша регистрация <span class="fw-bold">завершилась ошибкой,</span> пароль содержит менее 8 знаков</p>
 {% endif %}
 {% endblock %}
 
@@ -15,8 +15,16 @@
 
 {% block content %}
 
+{% if success %}
 <div class="container-sm px-2 py-3" id="term-form-result">
+    <p>Вернуться на <a href="/">главную</a></p>
+</div>
+{% else %}
+<div class="container-sm px-2 py-3" id="term-form-result1">
     <p>Попробовать <a href="/add-user">еще раз</a></p>
     <p>Вернуться на <a href="/">главную</a></p>
 </div>
+{% endif %}
+
+
 {% endblock %}

@@ -16,11 +16,21 @@
         Ваше замечание {% if success %}<span class="fw-bold">добавлено</span>{% else %}<span class="fw-bold">не добавлено</span>, отзыв не должен быть пустым{% endif %}</h4>
 
 
+    {% if success %}
     <h4 class="pb-2">Что еще можно сделать?</h4>
     <ul>
         <li class="pb-2" style="font-size:18px">посмотреть предыдущие <a href="/feedback-list">отзывы</a></li>
         <li class="pb-2" style="font-size:18px">вернуться на <a href="/">главную</a></li>
     </ul>
+    {% else %}
+    <h4 class="pb-2">Что еще можно сделать?</h4>
+    <ul>
+        <li class="pb-2" style="font-size:18px">посмотреть предыдущие <a href="/feedback-list">отзывы</a></li>
+        <li class="pb-2" style="font-size:18px">попробовать <a href="/add-feedback">еще раз</a></li>
+        <li class="pb-2" style="font-size:18px">вернуться на <a href="/">главную</a></li>
+    </ul>
+    {% endif %}
+
 
 
 </div>

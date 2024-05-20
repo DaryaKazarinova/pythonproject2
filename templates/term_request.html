@@ -2,9 +2,9 @@
 
 {% block page-title %}
 {% if success %}
-Термин добавлен
+<h4>Термин добавлен</h4>
 {% else %}
-Ошибка добавления
+<h4>Ошибка добавления</h4>
 {% endif %}
 {% endblock %}
 
@@ -21,9 +21,17 @@
     <p>{{ comment }}</p>
 
     <h2 class="pb-2 border-bottom">Что можно сделать?</h2>
+    {% if success %}
     <ul>
-        <li>заполнить <a href="/add-term">форму</a> ещё раз,</li>
+        <li>заполнить <a href="/add-term">форму</a> ещё раз</li>
         <li>вернуться на <a href="/">главную</a></li>
     </ul>
+    {% else %}
+    <ul>
+        <li>заполнить <a href="/add-term">форму</a> ещё раз</li>
+        <li>вернуться на <a href="/">главную</a></li>
+    </ul>
+    {% endif %}
+
 </div>
 {% endblock %}
