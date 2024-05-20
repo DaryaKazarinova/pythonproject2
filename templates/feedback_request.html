@@ -1,0 +1,27 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+{% if success %}
+<h2 class="container-sm px-2 py-4">Замечание учтено</h2>
+{% else %}
+Ошибка добавления
+{% endif %}
+{% endblock %}
+
+{% block page-lead %}{% endblock %}
+
+{% block content %}
+<div class="container-sm px-2 py-4" id="feedback-form-result">
+    <h4 class="pb-2  border-bottom">Уважаемый пользователь <span class="fst-italic">{{ user }}</span>,
+        Ваше замечание {% if success %}<span class="fw-bold">добавлено</span>{% else %}<span class="fw-bold">не добавлено</span>, отзыв не должен быть пустым{% endif %}</h4>
+
+
+    <h4 class="pb-2">Что еще можно сделать?</h4>
+    <ul>
+        <li class="pb-2" style="font-size:18px">посмотреть предыдущие <a href="/feedback-list">отзывы</a></li>
+        <li class="pb-2" style="font-size:18px">вернуться на <a href="/">главную</a></li>
+    </ul>
+
+
+</div>
+{% endblock %}

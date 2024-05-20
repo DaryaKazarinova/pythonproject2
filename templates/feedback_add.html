@@ -1,13 +1,10 @@
 {% extends "base_page.html" %}
 
 {% block page-title %}
-Нашли ошибку?
+<h2>Нашли ошибку или есть предложения?</h2>
 {% endblock %}
 
 {% block page-lead %}
-Когда вы нажмёте на кнопку &laquo;Отправить&raquo;, веб-приложению отправится POST-запрос.
-При этом в полях <span class="fst-italic">Имя</span> и <span class="fst-italic">Email</span> есть атрибут
-<code>value required</code>, который подсказывает пользователю о необходимости заполнения — это свойство Bootstrap.
 {% endblock %}
 
 
@@ -30,20 +27,19 @@
         <div class="row px-5 py-2">
             <h3>Ваше замечание</h3>
         </div>
+
+
         <div class="row px-5 py-2">
-            <div class="col-md-4">
-                <label for="new_term">Термин</label>
-                <input type="text" class="form-control input-lg" name="new_term" id="new_term">
-            </div>
             <div class="col-md-8">
-                <label for="new_definition">Объяснение термина</label>
-                <textarea type="text" class="form-control input-lg" name="new_definition" id="new_definition" aria-describedby="definition_note" rows="3"></textarea>
+                <textarea type="text" class="form-control input-lg" name="new_cat" id="new_cat" aria-describedby="definition_note" rows="3"></textarea>
                 <div id="definition_note" class="form-text">Коротко опишите замечание</div>
             </div>
         </div>
         <div class="row px-5 py-2">
-            <button type="submit" class="btn btn-primary" formaction="/send-term">Отправить</button>
+            <button type="submit" class="btn btn-success" formaction="/send-feedback">Отправить</button>
         </div>
+
+
     </form>
 </div>
 {% endblock %}

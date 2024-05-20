@@ -1,0 +1,57 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+<h2>Регистрационная форма</h2>
+{% endblock %}
+
+{% block page-lead %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container-sm px-5 py-5" id="user-form">
+    <form method="post">
+        <div class="row px-5 py-2">
+            <h3>Регистрационные данные:</h3>
+        </div>
+        <div class="row px-5 py-2">
+            <div class="col-md-6">
+                <label for="login">Ваш логин:</label>
+                <input type="text" class="form-control input-lg" name="login" id="login" placeholder="Иван123" value required>
+            </div>
+
+        </div>
+
+        <div class="row px-5 py-2">
+
+            <div class="col-md-6">
+                <label for="password">Ваш пароль (не менее 8 символов):</label>
+                <input type="password" class="form-control input-lg" name="password" id="password" placeholder="**********" value required>
+            </div>
+        </div>
+
+        <div class="row px-5 py-2">
+            <h3>Контактные данные:</h3>
+        </div>
+
+        <div class="row px-5 py-2">
+            <!--<div class="col-md-4">
+                <label for="new_feedback">Термин</label>
+                <input type="text" class="form-control input-lg" name="new_feedback" id="new_feedback">
+            </div>
+            -->
+
+            <div class="col-md-6">
+                <label for="email">Ваш email:</label>
+                <input type="text" class="form-control input-lg" name="email" id="email" placeholder="ivanov.ivan@email.com" value required>
+            </div>
+        </div>
+        <div class="row px-5 py-2">
+            <button type="submit" class="btn btn-success" formaction="/send-user">Отправить</button>
+        </div>
+
+
+    </form>
+</div>
+{% endblock %}

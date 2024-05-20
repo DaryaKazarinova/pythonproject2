@@ -1,0 +1,22 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+{% if success %}
+<h2>Вы зарегистрированы! </br>
+</h2>
+<p>Уважаемый пользователь <span class="fst-italic">{{ user }}</span>, Ваша регистрация <span class="fw-bold">прошла успешно</span></p>
+{% else %}
+<h2>Ошибка регистрации  </br>  </h2>
+<p>Уважаемый пользователь <span class="fst-italic">{{ user }}</span>, Ваша регистрация <span class="fw-bold">завершилась ошибкой</span></p>
+{% endif %}
+{% endblock %}
+
+{% block page-lead %}{% endblock %}
+
+{% block content %}
+
+<div class="container-sm px-2 py-3" id="term-form-result">
+    <p>Попробовать <a href="/add-user">еще раз</a></p>
+    <p>Вернуться на <a href="/">главную</a></p>
+</div>
+{% endblock %}

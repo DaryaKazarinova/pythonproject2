@@ -2,32 +2,54 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>{% block pagetitle %}{% endblock %}</title>
+    <title>Страны и столицы</title>
     <!-- load static -->
     {% load static %}
     <!-- CSS -->
     <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'journal-text.svg' %}" type="image/svg">
 </head>
 <body>
 <main>
+
+    <div class="bg-success p-2 bg-opacity-10">
     <div class="container">
-        <header class="border-bottom">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <div class="fs-2 mb-3">
-                    <img src="{% static 'calculator.svg' %}" alt="Проект про математику" width="32" height="32"/>
-                    <span>Проект про математику</span>
-                </div>
+        <header class="header">
+            <div class="row g-4 py-2 row-cols-1 row-cols-lg-3">
+            <div class="col-lg-10">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-success text-decoration-none">
+                    <img src="{% static 'earth-globe-global-svgrepo-com.svg' %}" alt="Проект про страны мира" width="52" height="32"/>
+
+                <span style="font-size:30px"> Изучаем страны мира </span>
             </a>
+            </div>
+            <div class="col-lg-2">
+                <div class="d-grid gap-5">
+                    <a href="/add-user" class="btn btn-outline-success">
+                        Регистрация
+                        <img src="{% static 'register.svg' %}" alt="Проект" width="42" height="32"/>
+                    </a>
+                </div>
+            </div>
+            </div>
         </header>
-        <div class="p-5 mb-4 bg-light rounded-3" id="title-box">
-            <div class="container-fluid py-5">
+        <div style="bottom=0px">
+        <div class="p-2 mb-2 bg-light rounded-5 text-success" id="title-box">
+            <div class="container-fluid">
                 <h1 class="display-1 fw-bold">{% block page-title %}{% endblock %}</h1>
-                <p class="col-md-8 fs-4">{% block page-lead %}{% endblock %}</p>
+                <p class="col-md-12 fs-4">{% block page-lead %}{% endblock %}</p>
             </div>
         </div>
-        {% block content %}{% endblock %}
-        <footer class="footer pt-3 mt-4 text-muted border-top">© 2023</footer>
+        <div class="p-1 mb-2 bg-light rounded-5 text-success" id="title-box2" >
+            <div class="container-fluid">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+
+        <footer class="footer pt-3 mt-4 text-muted border-top" style="bottom=0">© 2024</footer>
     </div>
+    </div>
+</div>
 </main>
 </body>
 </html>
